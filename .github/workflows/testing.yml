@@ -24,8 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-            # Install the DHCP client
+
       - name: Install DHCP for syntax checking
         run: sudo apt-get install -y isc-dhcp-server
 
@@ -33,7 +32,7 @@ jobs:
       - name: Run a one-line script
         run: ls /etc/dhcp
         
-      -name: rm -rf /etc/dhcp
+      - name: rm -rf /etc/dhcp
         run: sudo rm -rf /etc/dhcp
 
       - name: dhcpd test
