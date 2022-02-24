@@ -33,6 +33,9 @@ jobs:
       - name: Run a one-line script
         run: ls /etc/dhcp
         
+      -name: rm -rf /etc/dhcp
+        run: sudo rm -rf /etc/dhcp
+
       - name: dhcpd test
         run: dhcpd -t .
         
