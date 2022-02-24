@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: DHCPD
 
 # Controls when the workflow will run
 on:
@@ -35,6 +35,10 @@ jobs:
         
       - name: dhcpd test
         run: dhcpd -t .
+        
+      - name: pwd
+        run: pwd && ls ..
+        shell: bash
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
