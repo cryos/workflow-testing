@@ -31,7 +31,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: ls /etc/
         
       - name: dhcpd test
         run: dhcpd -t .
