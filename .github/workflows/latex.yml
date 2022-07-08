@@ -27,7 +27,7 @@ jobs:
         run: sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra
 
       # Runs a single command using the runners shell
-      - name: Check the version
+      - name: Build a PDF
         run: pdflatex test.tex
 
       - uses: actions/upload-artifact@v3
