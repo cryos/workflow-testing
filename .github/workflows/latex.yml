@@ -23,12 +23,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Install DHCP for syntax checking
+      - name: Install packages needed to build LaTeX
         run: sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra  texlive-latex-extra
 
       # Runs a single command using the runners shell
       - name: Check the version
         run: pdflatex test.tex
-          
-      - name: Failure
-        run: exit 1
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: test.pdf
