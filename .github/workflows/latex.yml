@@ -38,11 +38,20 @@ jobs:
       - name: Show Working directory
         run: ls
 
-      # Runs a single command using the runners shell
-      - name: Build a PDF
-        run: pdflatex test.tex
+      - name: Jinja2 templating
+        run: python3 template.py
+
+      - name: Copy files into OpenChapters
+        run: |
+          cp main.tex OpenChapters/
+          cp latex/* OpenChapters/
+
+      - name: Compile chapters
+        run: |
+          cd OpenChapters
+          pdflatex main.tex
 
       - uses: actions/upload-artifact@v3
         with:
-          name: PDF
-          path: test.pdf
+          name: PDF of OpenChapters
+          path: main.pdf

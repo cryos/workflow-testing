@@ -1,0 +1,15 @@
+chapters:
+  Foundations:
+    name: Foundations
+  bascry:
+    name: Basic Crystallography
+    path: Crystallography
+    key: BASCRY
+  crysym:
+    name: Crystallographic Symmetry
+    path: Symmetry
+    key: CRYSYM
+  2drots:
+    name: 2D Rotations
+    path: 2Drotations
+    key: 2DROTS

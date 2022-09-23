@@ -1,0 +1,44 @@
+% ###################################################################
+% Copyright (c) 2018-2022, Editors: A.D. Rollett & M. De Graef'
+% All rights reserved.
+%
+% Licensed under the Creative Commons CC BY-NC-SA 4.0 License,
+% hereafter referred to as the "License"; you may not use this
+% document except in compliance with the License. You may obtain
+% a copy of the License at
+%     https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% Unless required by applicable law or agreed to in writing, all
+% material distributed under the License is distributed on an
+% "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+% either express or implied. See the License for the specific
+% language governing permissions and limitations under the License.
+% ###################################################################
+
+\documentclass[11pt,fleqn,A4paper]{book} % Default font size and left-justified
+
+% load the OpenChapters.sty package file that loads everything else...
+\usepackage{OpenChapters}
+
+\addbibresource{OpenChapters.bib} % BibTeX bibliography file
+
+% uncomment the chapter you wish to typeset from the list below; to typeset the
+% entire text, leave all lines commented
+
+\begin{document}
+
+\input{matter/Frontmatter}
+
+% Here are all the parts and chapters
+
+% ###################################################################
+{%- for key, data in chapters.items() %}
+{% if data.path is not defined -%}
+\part{% raw %}{{% endraw %}{{ data.name }}{% raw %}}{% endraw %}
+{%- else -%}
+\include{src/{{ data.path }}/{{ data.path }}{% raw %}}{% endraw %} % {{ data.name }} -- {{ data.key }})
+{%- endif %}
+{%- endfor %}
+% ###################################################################
+
+\input{matter/Postmatter}
+\end{document}
