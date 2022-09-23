@@ -50,8 +50,9 @@ jobs:
         run: |
           cd OpenChapters
           pdflatex main.tex
+          ls
 
       - uses: actions/upload-artifact@v3
         with:
           name: PDF of OpenChapters
-          path: main.pdf
+          path: OpenChapters/main.pdf
