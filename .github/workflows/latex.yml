@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install packages needed to build LaTeX
-        run: sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-bibtex-extra texlive-science texlive-pictures
+        run: sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra texlive-science texlive-pictures
         
       - name: Install Python packages needed to build templates
         run: sudo apt-get install -y python-yaml python-jinja2
