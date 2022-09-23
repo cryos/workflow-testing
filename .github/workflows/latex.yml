@@ -29,6 +29,11 @@ jobs:
       - name: Install Python packages needed to build templates
         run: sudo apt-get install -y python-yaml python-jinja2
 
+      - name: Checkout the OpenChapters repository
+        uses: actions/checkout@v2
+        with:
+          repository: OpenChapters/OpenChapters
+
       # Runs a single command using the runners shell
       - name: Build a PDF
         run: pdflatex test.tex
