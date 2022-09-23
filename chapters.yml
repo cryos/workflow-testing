@@ -13,3 +13,9 @@ chapters:
     name: 2D Rotations
     path: 2Drotations
     key: 2DROTS
+  SingleCrystal:
+    name: Properties of Single Crystal Materials
+  matprp:
+    name: What is a Material Property?
+    path: MaterialProperty
+    key: MATPRP
