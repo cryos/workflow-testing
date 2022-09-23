@@ -51,9 +51,6 @@ jobs:
           cd OpenChapters
           cat src/*/chaptercitations.bib > OpenChapters.bib
           pdflatex main
-          bibtex main
-          pdflatex main
-          pdflatex main
           ls
 
       - uses: actions/upload-artifact@v3
