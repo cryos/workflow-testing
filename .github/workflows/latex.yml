@@ -33,6 +33,10 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: OpenChapters/OpenChapters
+          path: ./OpenChapters
+
+      - name: Show Working directory
+        run: ls
 
       # Runs a single command using the runners shell
       - name: Build a PDF
